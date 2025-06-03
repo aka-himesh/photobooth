@@ -1,0 +1,477 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background-color: black;
+}
+.main{
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sub-main{
+    height: 500px;
+    width: 750px;
+    background-color:#232325;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 10px solid #3f3f47;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    
+}
+.inner{
+    height: 500px;
+    width: 200px;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#232325;
+    border-left: 10px solid #3f3f47;
+    box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.5);
+}
+.inner2 {
+    height: 180px;
+    width: 110px;
+    background-color: #232325;
+    display: flex;
+    flex-direction: column;         /* Stack items vertically */
+    align-items: center;            /* Center horizontally */
+    justify-content: flex-start;    /* Push content to the top */
+    padding-top: 10px;              /* Add spacing from the top */
+    border-radius: 10px;
+    border: 5px solid #3f3f47;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    color:#d8ab07;
+}
+
+.coin{
+    height: 80px;
+    width: 70px;
+    background-color: brown;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#1a1a1d;
+    border-radius: 10px;
+    border: 5px solid #3f3f47;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-top: 20px
+    
+
+   
+}
+.coin-slot{
+    height: 10px;
+    width: 35px;
+    background-color: black;
+    border-radius: 5px;
+    border: 2px solid #3f3f47;
+    box-shadow: inset 0 0 10px #1a1a1d  ;
+}
+.coin.pop {
+    animation: popCoinAnim 0.4s ease-out;
+  }
+  
+  @keyframes popCoinAnim {
+    0% {
+      transform: scale(1) translateY(0);
+    }
+    50% {
+      transform: scale(1.2) translateY(-10px);
+    }
+    100% {
+      transform: scale(1) translateY(0);
+    }
+  }
+  .coin-circle {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background: gold;
+    border-radius: 50%;
+    border: 2px solid #c9a602;
+    box-shadow: 0 0 5px gold, inset 0 0 3px #fff38a;
+    animation: none;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+.coin-circle.pop {
+    animation: coinPop 0.5s ease-out forwards;
+  }
+  .coin:hover .coin-circle{
+    opacity: 1;
+  }
+  
+ @keyframes coinPop {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-20px);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(-40px);
+      opacity: 0;
+    }
+  }
+  .main-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 10px;
+    text-align: center;
+    overflow: hidden;
+    padding: 0 10px; /* Prevent overflow on small screens */
+  }
+  
+  .banner {
+    width: 95vw;               /* Responsive width */
+    max-width: 760px;          /* Original width limit */
+    height: auto;
+    aspect-ratio: 760 / 110;   /* Maintains the original aspect ratio */
+    border-radius: 20px;
+    background-color: red;
+    box-shadow: inset 0 0 10px rgba(170, 168, 161, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sub-banner {
+    width: 97%;
+    height: 90%;
+    border-radius: 20px;
+    border: 3px solid #fff38a;
+    margin-top: 5px;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Styled heading inside sub-banner */
+  .sub-banner h1 {
+    margin: 0;
+    transform: scaleX(2.5) scaleY(2); /* Combine both in one */
+    color: #fff38a;
+    text-shadow: 0 0 10px white;
+    font-size: 1.2rem;                /* Base size for responsiveness */
+  }
+  
+  /* Responsive text on smaller devices */
+  @media (max-width: 600px) {
+    .sub-banner h1 {
+      font-size: 1rem;
+      transform: scaleX(2) scaleY(1.8);
+    }
+  }
+  
+  .curtain {
+    display: flex;
+    height: 470px;
+    width: 73%;
+    /* margin-left: 205px; */
+  }
+  
+  .fold {
+    flex: 1;
+    background: linear-gradient(to right, #b22222, #8b0000);
+    animation: wave 2s ease-in-out infinite alternate;
+    border-right: 2px solid rgba(0, 0, 0, 0.2);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius:10px;
+    
+  }
+  
+  .fold:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .fold:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  .fold:nth-child(4) {
+    animation-delay: 0.6s;
+  }
+  .fold:nth-child(5) {
+    animation-delay: 0.8s;
+  }
+  .fold:nth-child(6) {
+    animation-delay: 1s;
+  }
+  
+  @keyframes wave {
+    0% {
+      transform: scaleY(1);
+      filter: brightness(1);
+    }
+    100% {
+      transform: scaleY(1.1);
+      filter: brightness(1.2);
+    }
+  }
+  .btn{
+    background-color: #8b0000;
+    color: #fff38a;
+    width: 70px;
+    height: 30px;
+    font-size: 20px;
+    margin-top: 18%;
+    box-shadow: inset 0 0 10px rgb(0, 0, 0,0.5);
+    padding-bottom: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 8px 4px 8px  rgba(170, 168, 161, 0.3); /* x, y, blur, color */
+    transition: box-shadow 0.3s ease;
+    
+  }
+  .btn:hover {
+    box-shadow: 8px 6px 16px  rgba(170, 168, 161, 0.4);
+  }
+  #startBtn {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  #startBtn.show {
+    opacity: 1;
+  }
+  a{
+    text-decoration: none;
+  }
+  .btn:active {
+    transform: scale(0.95);
+    box-shadow: inset 0 0 10px black;
+  }
+ /* Make layout elements scale on smaller screens */
+@media (max-width: 1024px) {
+  .sub-main {
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .inner {
+    width: 100%;
+    height: 200px;
+    flex-direction: row;
+    justify-content: center;
+    border-left: none;
+    border-top: 10px solid #3f3f47;
+  }
+
+  .curtain {
+    width: 100%;
+    height: 300px;
+    margin-top: 20px;
+  }
+
+  .fold {
+    border-radius: 5px;
+  }
+
+  .banner {
+    width: 90%;
+  }
+
+  .sub-banner {
+    width: 95%;
+    margin: auto;
+  }
+
+  .sub-banner h1 {
+    font-size: 2rem;
+    transform: scale(1.5);
+  }
+
+  .btn {
+    margin-top: 10px;
+  }
+}
+
+/* Mobile Screens (phones) */
+@media (max-width: 600px) {
+  .banner {
+    height: 90px;
+  }
+
+  .sub-banner {
+    height: 70px;
+  }
+
+  .sub-banner h1 {
+    font-size: 1.4rem;
+    transform: scale(1.2);
+  }
+
+  .inner2 {
+    width: 100px;
+    height: 150px;
+    padding: 8px;
+  }
+
+  .coin {
+    width: 60px;
+    height: 60px;
+  }
+
+  .coin-slot {
+    width: 25px;
+    height: 8px;
+  }
+
+  .btn {
+    font-size: 16px;
+    width: 60px;
+    height: 28px;
+  }
+
+  .curtain {
+    height: 220px;
+  }
+}
+/* Button wrapper on the left */
+.button-wrapper-left {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+/* Custom main button */
+.custom-button {
+  background-color: #ffcc00;
+  color: black;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 4px 4px 0 #000000;
+  transform: rotate(-5deg);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.custom-button:hover {
+  transform: rotate(5deg) scale(1.05);
+  box-shadow: 6px 6px 0 #000000;
+}
+
+/* Help button (top right corner) */
+.help-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ffcc00;
+  color: black;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 16px;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  box-shadow: 2px 2px 5px #000;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.2s ease-in-out;
+}
+
+.help-button:hover {
+  transform: rotate(5deg) scale(1.05);
+  box-shadow: 6px 6px 0 #000000;
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #2b2b2b;
+  color: white;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Hide modal initially */
+.hidden {
+  display: none;
+}
+
+/* Highlighted heading text */
+.highlight {
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+/* "Got it!" button */
+.got-it-button {
+  background-color: #ffcc00;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .custom-button {
+    font-size: 12px;
+    padding: 8px 16px;
+    border-radius: 20px;
+  }
+
+  .help-button {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+
+  .modal {
+    padding: 20px;
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  .got-it-button {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
+  .button-wrapper-left {
+    top: 15px;
+    left: 15px;
+  }
+
+  .help-button {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+
+
+  
+  

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
+  <title>PhotoBooth</title>
+</head>
+<body>
+  <!-- Coin sound -->
+  <audio id="coinSound" src="coin-drop.mp3" preload="auto"></audio>
+  <!-- Help Button -->
+  <button id="help-btn" class="help-button">?</button>
+
+<!-- Modal -->
+  <div id="info-modal" class="modal hidden">
+    <h2><span class="highlight">Welcome to the Photobooth!</span></h2>
+    <p>
+      Hello! Welcome to the Pitaara Photobooth! 📸
+      Have fun snapping memories! All the photos you take here are stored locally on your device—so only you can see them. You can save your favorites and print them out for keepsakes!
+      
+      This photobooth is inspired by SnapSome, but with our own unique twist and extra cool features to make your moments even more special. So go ahead, strike a pose and let the fun begin!
+    </p>
+    <button id="close-modal" class="got-it-button">Got it!</button>
+  </div>
+
+  <!-- Instagram Button -->
+  <div class="button-wrapper-left">
+    <a href="https://www.instagram.com/_pitaraa/">
+      <button class="custom-button">made by pitara</button>
+    </a>
+  </div>
+
+  
+
+
+  <!-- Main banner -->
+  <div class="main-banner">
+    <div class="banner">
+      <div class="sub-banner">
+        <h1>PHOTOBOOTH</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Booth body -->
+  <div class="main">
+    <div class="sub-main">
+
+      <!-- Curtain -->
+      <div class="curtain">
+        <div class="fold"></div>
+        <div class="fold"></div>
+        <div class="fold"></div>
+        <div class="fold"></div>
+        <div class="fold"></div>
+        <div class="fold"></div>
+      </div>
+
+      <!-- Insert Coin Panel -->
+      <div class="inner">
+        <div class="inner2">
+
+          <!-- Text -->
+          <div>
+            <h4>insert</h4>
+            <h4>coin here</h4>
+          </div>
+
+          <!-- Coin -->
+          <div class="coin" onclick="handleCoinClick()">
+            <div class="coin-circle"></div>
+            <div class="coin-slot"></div>
+          </div>
+
+          <!-- Button at bottom -->
+          <a href="index2.html"><button id="startBtn" class="btn" style="display: none;">Start</button>
+          </a>
+        </div>
+      </div>  
+    </div>
+  
+
+  </div>
+ 
+
+  <!-- JavaScript -->
+  <script>
+    function handleCoinClick() {
+      const coinCircle = document.querySelector('.coin-circle');
+      const sound = document.getElementById('coinSound');
+      if (!coinCircle) return;
+
+      // Animate coin
+      coinCircle.classList.add('pop');
+
+      // Play sound
+      sound.currentTime = 0;
+      sound.play();
+
+      // Reset animation
+      setTimeout(() => {
+        coinCircle.classList.remove('pop');
+      }, 500);
+    }
+    function handleCoinClick() {
+      popCoin();
+      playCoinSound();
+      showButtonAfterDelay();
+    }
+
+    function popCoin() {
+      const coin = document.querySelector('.coin');
+      coin.classList.add('pop');
+      setTimeout(() => {
+        coin.classList.remove('pop');
+      }, 500);
+    }
+
+    function playCoinSound() {
+      const sound = document.getElementById('coinSound');
+      sound.currentTime = 0;
+      sound.play();
+    }
+
+    function showButtonAfterDelay() {
+      const btn = document.getElementById('startBtn');
+      setTimeout(() => {
+        btn.style.display = 'block';
+        setTimeout(() => {
+          btn.classList.add('show');
+        }, 10);
+      }, 3000); // 3 second delay
+    }
+    document.getElementById('help-btn').addEventListener('click', () => {
+  document.getElementById('info-modal').classList.remove('hidden');
+});
+
+document.getElementById('close-modal').addEventListener('click', () => {
+  document.getElementById('info-modal').classList.add('hidden');
+});
+
+   
+
+   
+
+  </script>
+</body>
+</html>
